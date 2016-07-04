@@ -1,4 +1,12 @@
 ---
+- name: 'Installing dependencies'
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    
 - name: 'Adding APT key'
   become: yes
   apt_key:

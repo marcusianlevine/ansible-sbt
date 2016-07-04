@@ -4,4 +4,5 @@
   yum_repository:
     name: sbt
     baseurl: https://bintray.com/sbt/rpm/rpm
+    description: Repository for SBT 
     state: present
