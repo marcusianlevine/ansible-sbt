@@ -1,0 +1,7 @@
+---
+- name: 'Adding YUM repository'
+  become: yes
+  yum_repository:
+    name: sbt
+    baseurl: https://bintray.com/sbt/rpm/rpm
+    state: present
