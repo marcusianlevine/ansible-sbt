@@ -1,8 +1,6 @@
 ---
 - name: 'Adding YUM repository'
   become: yes
-  yum_repository:
-    name: sbt
-    baseurl: https://bintray.com/sbt/rpm
-    description: Repository for SBT
-    state: present
+  get_url:
+    url: https://bintray.com/sbt/rpm/rpm
+    dest: /etc/yum.repos.d/bintray-sbt-rpm.repo
