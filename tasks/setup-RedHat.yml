@@ -4,3 +4,6 @@
   get_url:
     url: https://bintray.com/sbt/rpm/rpm
     dest: /etc/yum.repos.d/bintray-sbt-rpm.repo
+    owner: root
+    group: root
+    mode: 0644
