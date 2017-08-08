@@ -6,6 +6,10 @@
 # sudo apt-get update
 # sudo apt-get install sbt
 
+- name: Determine whether to use sudo for package installations
+  set_fact:
+    should_become: "{{ ansible_env.ANSIBLE_CONTAINER is not defined }}"
+
 - include: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
@@ -13,7 +17,7 @@
   when: ansible_os_family == 'RedHat'
 
 - name: 'Install SBT package'
-  become: yes
+  become: "{{ should_become }}"
   package:
     name: sbt
     state: latest
