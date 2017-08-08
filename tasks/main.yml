@@ -21,3 +21,7 @@
   package:
     name: sbt
     state: latest
+
+- name: Cleanup package caches if building a container
+  include: cleanup.yml
+  when: ansible_env.ANSIBLE_CONTAINER is defined

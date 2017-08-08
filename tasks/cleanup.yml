@@ -1,0 +1,9 @@
+---
+
+- name: Clean yum cache
+  command: yum clean all
+  when: ansible_os_family == 'RedHat'
+
+- name: Clean apt cache
+  command: apt-get clean
+  when: ansible_os_family == 'Debian'
