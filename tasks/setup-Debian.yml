@@ -3,6 +3,7 @@
   package:
     name: "{{ item }}"
     state: present
+    update_cache: "{{ ansible_env.ANSIBLE_CONTAINER is defined | bool }}"
   with_items:
     - apt-transport-https
     - ca-certificates
